@@ -101,27 +101,39 @@
     <head>
         <link rel="stylesheet" href="assets/css/all.min.css">
     </head>
- <nav>
-        <a href="index.html" onclick="playSound(event)"><img src="img/House.png" alt="Home" width="30" height="30"> Home</a>
-        <a href="Home.html" onclick="playSound(event)"><img src="img/Plant.png" alt="Misc" width="30" height="30"> Misc</a>
-        <a href="Fridge.html" onclick="playSound(event)"><img src="img/Fridge.png" alt="Fridge" width="20" height="30"> Fridge</a>
-        <a href="Cleaning.html" onclick="playSound(event)"><img src="img/Cleaning.png" alt="Cleaning" width="24" height="30"> Cleaning</a>
-        <a href="Laundry.html" onclick="playSound(event)"><img src="img/Laundry.png" alt="Laundry" width="24" height="27"> Laundry</a>
+    <nav>
+        <a href="index.html" onclick="playSound(event)"><img src="img/House.png" alt="Home" width="30" height="30" onmouseover="this.src='img/HouseDark.png'" 
+            onmouseout="this.src='img/House.png'"> Home
+        </a>
+        <a href="Home.html" onclick="playSound(event)"><img src="img/Plant.png" alt="Misc" width="30" height="30" onmouseover="this.src='img/PlantDark.png'" 
+            onmouseout="this.src='img/Plant.png'"> Misc
+        </a>
+        <a href="Fridge.html" onclick="playSound(event)"><img src="img/fridge.png" alt="Fridge" width="20" height="30" onmouseover="this.src='img/FridgeDark.png'" 
+            onmouseout="this.src='img/Fridge.png'"> Fridge
+        </a>
+        <a href="Cleaning.html" onclick="playSound(event)"><img src="img/cleaning.png" alt="Cleaning" width="24" height="30" onmouseover="this.src='img/CleaningDark.png'" 
+            onmouseout="this.src='img/Cleaning.png'"> Cleaning
+        </a>
+        <a href="Laundry.html" onclick="playSound(event)"><img src="img/laundry.png" alt="Laundry" width="24" height="27"onmouseover="this.src='img/LaundryDark.png'" 
+            onmouseout="this.src='img/Laundry.png'"> Laundry
+        </a>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.1/buzz.min.js"></script>
         <script>
-            var sound1 = new buzz.sound("Sound/thumbing.mp3");
+            var sound1 = new buzz.sound("sound/thumbing.mp3");
             function playSound(event) {
-                event.preventDefault();
+                event.preventDefault(); // Prevent navigation
                 sound1.play();
                 setTimeout(() => {
                     window.location.href = event.target.closest('a').href;
-                }, 600);
+                }, 600); // Delay navigation to allow sound to play
             }
         </script>
     </nav>
 <div class="container">
-    <div><img src="img/TV.png" alt="Misc"  width="70" height="50" > TV</a></div>
-    <div><img src="img/AC.png" alt="Fridge" width="70" height="50"> AC</a></div>
+    <div><img src="img/TV.png" alt="Misc"  width="70" height="50" onmouseover="this.src='img/TVDark.png'" 
+        onmouseout="this.src='img/TV.png'"> TV</a></div>
+    <div><img src="img/AC.png" alt="Fridge" width="70" height="50" onmouseover="this.src='img/ACDark.png'" 
+        onmouseout="this.src='img/AC.png'"> AC</a></div>
 
 </div>
     <footer>
