@@ -101,21 +101,21 @@
     <head>
         <link rel="stylesheet" href="assets/css/all.min.css">
     </head>
-    <nav>
-        <a href="index.html" onclick="playSound(event)"><img src="img/house.png" alt="Home" width="24" height="24"> Home</a>
-        <a href="Home.html" onclick="playSound(event)"><img src="img/plant.png" alt="Misc" width="24" height="24"> Misc</a>
-        <a href="Fridge.html" onclick="playSound(event)"><img src="img/fridge.png" alt="Fridge" width="24" height="24"> Fridge</a>
-        <a href="Cleaning.html" onclick="playSound(event)"><img src="img/cleaning.png" alt="Cleaning" width="24" height="24"> Cleaning</a>
-        <a href="Laundry.html" onclick="playSound(event)"><img src="img/laundry.png" alt="Laundry" width="24" height="24"> Laundry</a>
+ <nav>
+        <a href="index.html" onclick="playSound(event)"><img src="img/House.png" alt="Home" width="30" height="30"> Home</a>
+        <a href="Home.html" onclick="playSound(event)"><img src="img/Plant.png" alt="Misc" width="30" height="30"> Misc</a>
+        <a href="Fridge.html" onclick="playSound(event)"><img src="img/Fridge.png" alt="Fridge" width="20" height="30"> Fridge</a>
+        <a href="Cleaning.html" onclick="playSound(event)"><img src="img/Cleaning.png" alt="Cleaning" width="24" height="30"> Cleaning</a>
+        <a href="Laundry.html" onclick="playSound(event)"><img src="img/Laundry.png" alt="Laundry" width="24" height="27"> Laundry</a>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.1/buzz.min.js"></script>
         <script>
-            var sound1 = new buzz.sound("sound/thumbing.mp3");
+            var sound1 = new buzz.sound("Sound/thumbing.mp3");
             function playSound(event) {
-                event.preventDefault(); // Prevent navigation
+                event.preventDefault();
                 sound1.play();
                 setTimeout(() => {
                     window.location.href = event.target.closest('a').href;
-                }, 600); // Delay navigation to allow sound to play
+                }, 600);
             }
         </script>
     </nav>
