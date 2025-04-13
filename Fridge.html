@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home theme</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #444;
+            padding: 0.5rem 0;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .container > div {
+            background: #f4f4f4;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: transform 0.5s ease, z-index 0.5s ease;
+            border-radius: 10px;
+        }
+
+        .container > div.fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1000;
+            transform: scale(1);
+            background: #fff;
+            border: none;
+            padding: 2rem;
+            overflow: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+    </header>
+    <head>
+        <link rel="stylesheet" href="assets/css/all.min.css">
+    </head>
+    <nav>
+        <a href="index.html" onclick="playSound(event)"><img src="img/house.png" alt="Home" width="24" height="24"> Home</a>
+        <a href="Home.html" onclick="playSound(event)"><img src="img/plant.png" alt="Misc" width="24" height="24"> Misc</a>
+        <a href="Fridge.html" onclick="playSound(event)"><img src="img/fridge.png" alt="Fridge" width="24" height="24"> Fridge</a>
+        <a href="Cleaning.html" onclick="playSound(event)"><img src="img/cleaning.png" alt="Cleaning" width="24" height="24"> Cleaning</a>
+        <a href="Laundry.html" onclick="playSound(event)"><img src="img/laundry.png" alt="Laundry" width="24" height="24"> Laundry</a>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.1/buzz.min.js"></script>
+        <script>
+            var sound1 = new buzz.sound("sound/thumbing.mp3");
+            function playSound(event) {
+                event.preventDefault(); // Prevent navigation
+                sound1.play();
+                setTimeout(() => {
+                    window.location.href = event.target.closest('a').href;
+                }, 600); // Delay navigation to allow sound to play
+            }
+        </script>
+    </nav>
+<div class="container">
+    <div><img src="img/Milk.png" alt="Misc"  width="30" height="50" > Milk</a></div>
+    <div><img src="img/Carrot.png" alt="Fridge" width="25" height="50"> Carrot</a></div>
+</div>
+    <footer>
+        <p>&copy; 2025 Dat's Website</p>
+    </footer>
+ 
+    </script>
+</body>
+</html>
