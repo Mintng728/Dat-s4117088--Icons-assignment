@@ -89,7 +89,6 @@
             margin-top: 1rem;
         }
 
-        /* Responsive Design */
         @media (min-width: 768px) {
             .container {
                 grid-template-columns: repeat(2, 1fr);
@@ -118,11 +117,11 @@
         <script>
             var sound1 = new buzz.sound("sound/thumbing.mp3");
             function playSound(event) {
-                event.preventDefault(); // Prevent navigation
+                event.preventDefault();
                 sound1.play();
                 setTimeout(() => {
                     window.location.href = event.target.closest('a').href;
-                }, 600); // Delay navigation to allow sound to play
+                }, 600);
             }
         </script>
     </nav>
