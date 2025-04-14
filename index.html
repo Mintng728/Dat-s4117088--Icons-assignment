@@ -91,35 +91,65 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to My Icons</h1>
     </header>
     </header>
     <nav>
-        <a href="index.html" onclick="playSound(event)"><img src="img/House.png" alt="Home" width="30" height="30" onmouseover="this.src='img/HouseDark.png'" onmouseout="this.src='img/House.png'"> Home </a>
-        <a href="Home.html" onclick="playSound(event)"><img src="img/Plant.png" alt="Misc" width="30" height="30" onmouseover="this.src='img/PlantDark.png'" onmouseout="this.src='img/Plant.png'"> Misc </a>
-        <a href="Fridge.html" onclick="playSound(event)"><img src="img/fridge.png" alt="Fridge" width="20" height="30" onmouseover="this.src='img/FridgeDark.png'" onmouseout="this.src='img/Fridge.png'"> Fridge </a>
-        <a href="Cleaning.html" onclick="playSound(event)"><img src="img/cleaning.png" alt="Cleaning" width="24" height="30" onmouseover="this.src='img/CleaningDark.png'" onmouseout="this.src='img/Cleaning.png'"> Cleaning </a>
-        <a href="Laundry.html" onclick="playSound(event)"><img src="img/laundry.png" alt="Laundry" width="24" height="27"onmouseover="this.src='img/LaundryDark.png'" onmouseout="this.src='img/Laundry.png'"> Laundry </a>
+        <a onclick="playSound(event, 'home')">
+            <img src="img/House.png" alt="Home" width="70" height="70" onmouseover="this.src='img/HouseDark.png'" onmouseout="this.src='img/House.png'">
+        </a>
+        <a onclick="playSound(event, 'plant')">
+            <img src="img/Plant.png" alt="Misc" width="70" height="70" onmouseover="this.src='img/PlantDark.png'" onmouseout="this.src='img/Plant.png'">
+        </a>
+        <a onclick="playSound(event, 'fridge')">
+            <img src="img/fridge.png" alt="Fridge" width="40" height="70" onmouseover="this.src='img/FridgeDark.png'" onmouseout="this.src='img/Fridge.png'">
+        </a>
+        <a onclick="playSound(event, 'cleaning')">
+            <img src="img/cleaning.png" alt="Cleaning" width="40" height="70" onmouseover="this.src='img/CleaningDark.png'" onmouseout="this.src='img/Cleaning.png'">
+        </a>
+        <a onclick="playSound(event, 'laundry')">
+            <img src="img/laundry.png" alt="Laundry" width="60" height="70" onmouseover="this.src='img/LaundryDark.png'" onmouseout="this.src='img/Laundry.png'">
+        </a>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.1/buzz.min.js"></script>
-        <script>
-            var sound1 = new buzz.sound("Sound/thumbing.mp3");
-            function playSound(event) {
-                event.preventDefault(); 
-                sound1.play();
-                setTimeout(() => {
-                    window.location.href = event.target.closest('a').href;
-                }, 600);
-            }
-        </script>
+
     </nav>
 <div class="container">
-    <div><a href="Home.html"><img src="img/plant.png" alt="Misc"  width="50" height="50" onmouseover="this.src='img/PlantDark.png'"onmouseout="this.src='img/Plant.png'"> Misc</a></div>
-    <div><a href="Fridge.html"><img src="img/fridge.png" alt="Fridge" width="35" height="50" onmouseover="this.src='img/FridgeDark.png'" onmouseout="this.src='img/Fridge.png'"> Fridge</a></div>
-    <div><a href="Cleaning.html"><img src="img/cleaning.png" alt="Cleaning"  width="40" height="50" onmouseover="this.src='img/CleaningDark.png'" onmouseout="this.src='img/Cleaning.png'"> Cleaning</a></div>
-    <div><a href="Laundry.html"><img src="img/laundry.png" alt="Laundry"  width="47" height="50" onmouseover="this.src='img/LaundryDark.png'" onmouseout="this.src='img/Laundry.png'">Laundry</a></div>
+    <div><a onclick="playSound(event, 'milk')">
+        <img src="img/Milk.png" alt="Misc" width="50" height="90" onmouseover="this.src='img/MilkDark.png'" onmouseout="this.src='img/Milk.png'"></a>
+    </div>
+    <div><a onclick="playSound(event, 'carrot')">
+    <img src="img/Carrot.png" alt="Fridge" width="40" height="90" onmouseover="this.src='img/CarrotDark.png'"onmouseout="this.src='img/Carrot.png'"> </a>
 </div>
+    <div><a onclick="playSound(event, 'tv')">
+    <img src="img/TV.png" alt="Misc"  width="120" height="90" onmouseover="this.src='img/TVDark.png'" onmouseout="this.src='img/TV.png'"></a>
+</div>
+    <div><a onclick="playSound(event, 'ac')">
+        <img src="img/AC.png" alt="Fridge" width="130" height="90" onmouseover="this.src='img/ACDark.png'" onmouseout="this.src='img/AC.png'"></a>
+    
+</div>
+</div>
+<script>
+    const sounds = {
+        home: new buzz.sound("Sound/thumbing.mp3"),
+        plant: new buzz.sound("Sound/plant.mp3"),
+        fridge: new buzz.sound("Sound/fridge.mp3"),
+        cleaning: new buzz.sound("Sound/cleaning.mp3"),
+        laundry: new buzz.sound("Sound/laundry.mp3"),
+        milk: new buzz.sound("Sound/Milk.mp3"),
+        carrot: new buzz.sound("Sound/Carrot.mp3"),
+        tv: new buzz.sound("Sound/TV.mp3"),
+        ac: new buzz.sound("Sound/AC.mp3"),
+    };
+    function playSound(event, soundKey) {
+        event.preventDefault();
+        if (sounds[soundKey]) {
+            sounds[soundKey].play();
+        }
+        setTimeout(() => {
+            window.location.href = event.target.closest('a').href;
+        }, 1200);
+    }
+</script>
     <footer>
-        <p>&copy; 2025 Dat's Website</p>
     </footer>
  
     </script>
